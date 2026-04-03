@@ -1,50 +1,49 @@
- import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Home } from './pages/Home'
-import Layout from './pages/Layout'
-import DynamicPage from './pages/DynamicPage'
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home } from "./pages/Home";
+import DynamicPage from "./pages/DynamicPage";
+import Layout from "./pages/Layout";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Services from "./pages/Services";
 
-// 👇 Import pages
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Services from './pages/Services'
-import Forzerofor from './pages/Forzerofor'
+
 
 export default function App() {
-
-  const routers = createBrowserRouter([
+  const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: <Layout />, // ✅ yaha Layout use karo
       children: [
         {
-          path: "/:slug?",
-          element: <Home />
+          path: "",
+          element: <Home />,
         },
-        {
-          path: "/about",
-          element: <About />
+            {
+          path: "about",
+          element: <About />,
         },
-        {
-          path: "/contact",
-          element: <Contact />
-        },
-        {
-          path: "/services",
-          element: <Services />
-        },
-        {
-          path: "/dynamic-page/:id",
-          element: <DynamicPage />
-        },
-
           {
-          path: "*",
-          element: <Forzerofor/>
+          path: "contact",
+          element: <Contact />,
         },
-      ]
-    }
-  ])
+          {
+          path: "services",
+          element: <Services />,
+        },
 
-  return <RouterProvider router={routers} />
+        {
+          path: "category/:slug",
+          element: <Home />,
+        },
+        {
+          path: "product/:id",
+          element: <DynamicPage />,
+        },
+    
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }

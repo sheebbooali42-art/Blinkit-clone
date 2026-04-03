@@ -1,4 +1,5 @@
- export default function Services() {
+import React from "react";
+export default function Services() {
   const services = [
     {
       title: "Fast Delivery",
@@ -21,7 +22,6 @@
   return (
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Our Services</h1>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((item, index) => (
           <div key={index} className="border p-4 rounded shadow hover:shadow-lg">
