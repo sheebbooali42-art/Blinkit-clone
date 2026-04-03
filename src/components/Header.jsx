@@ -1,8 +1,17 @@
-import React from 'react'
+ import React from 'react'
+ import { Link, useLocation } from 'react-router-dom'
 import { FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const  {pathname}=useLocation()
+  const items = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Services", path: "/services" },
+    { name: "Cources", path: "/cources" },
+  ]
+
   return (
     <header className="w-full shadow-md bg-blue-800 text-white">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
@@ -12,10 +21,12 @@ const Header = () => {
 
         {/* Navigation Links */}
         <nav className="flex items-center gap-6">
-          <Link to="/" className="hover:text-gray-200">Home</Link>
-          <Link to="/about" className="hover:text-gray-200">About</Link>
-          <Link to="/contact" className="hover:text-gray-200">Contact</Link>
-          <Link to="/services" className="hover:text-gray-200">Services</Link>
+          {
+            items.map((item, index) => (
+              <Link key={index} className={`upercase ${pathname==item.path ? "font-medium text-white bg-amber-800 px-4 py-1.5 rounded-[10px] " :""}`} to={item.path}>{item.name}
+              </Link>
+            ))
+          }
         </nav>
 
         {/* Right Section */}
@@ -34,7 +45,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
