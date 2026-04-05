@@ -17,7 +17,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
         
         {/* Logo */}
-        <h1 className="text-2xl font-bold">ShopEase</h1>
+        <h1 className="text-2xl font-bold">MIN.
+
+        </h1>
 
         {/* Navigation Links */}
         <nav className="flex items-center gap-6">

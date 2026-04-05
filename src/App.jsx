@@ -8,30 +8,27 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 
 
-
 export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />, // ✅ yaha Layout use karo
+      element: <Layout />,
       children: [
         {
           path: "",
           element: <Home />,
         },
-            {
+        {
           path: "about",
-          element: <About />,
+          element: <About />,  
         },
-          {
+                {
           path: "contact",
-          element: <Contact />,
-        },
-          {
+          element: <Contact/>, 
+        },        {
           path: "services",
-          element: <Services />,
+          element: <Services />, 
         },
-
         {
           path: "category/:slug",
           element: <Home />,
@@ -40,7 +37,6 @@ export default function App() {
           path: "product/:id",
           element: <DynamicPage />,
         },
-    
       ],
     },
   ]);
