@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaUser, FaSearch, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 
@@ -14,9 +15,10 @@ import { FaShoppingCart, FaUser, FaSearch, FaFacebook, FaInstagram, FaTwitter } 
         <div>
           <h3 className="font-semibold mb-2">Quick Links</h3>
           <ul className="space-y-1">
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Contact</li>
+            <li> <Link to={"/"} >Home </Link>  </li>  
+            <li> <Link to={"About"} >About </Link>  </li>  
+            <li> <Link to={"Contact"}> Contact </Link> </li>  
+            <li> <Link to={"services"}> services </Link> </li>  
           </ul>
         </div>
 

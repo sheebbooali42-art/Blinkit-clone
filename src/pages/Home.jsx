@@ -8,10 +8,12 @@ import { Link, useParams } from "react-router-dom";
 export const Home = () => {
   const { slug } = useParams();
 
+
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  
   // ✅ Get Categories
   const getCategories = async () => {
     try {
@@ -39,17 +41,19 @@ export const Home = () => {
       const res = await axios.get(API);
       setProducts(res.data.products);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setProducts([]);
     } finally {
       setLoading(false);
     }
   };
 
+
   // ✅ Fetch products on slug change
   useEffect(() => {
     fetchProducts();
   }, [slug]);
+
 
   // ✅ Fetch categories once
   useEffect(() => {
@@ -67,8 +71,7 @@ export const Home = () => {
           {categories.map((cat, index) => (
             <Link key={index} to={`/category/${cat.slug}`}>
               <li className="p-2 text-center cursor-pointer hover:bg-amber-200 shadow text-sm">
-                {cat.name}
-              </li>
+                {cat.name}</li>
             </Link>
           ))}
         </ul>

@@ -16,6 +16,20 @@ export default function Services() {
     {
       title: "Easy Returns",
       desc: "Hassle-free return policy for customer satisfaction."
+    },
+        {
+      title: "Easy Returns",
+      desc: "Hassle-free return policy for customer satisfaction."
+    },    {
+      title: "Easy Returns",
+      desc: "Hassle-free return policy for customer satisfaction."
+    },    {
+      title: "Easy Returns",
+      desc: "Hassle-free return policy for customer satisfaction."
+    },
+        {
+      title: "Easy Returns",
+      desc: "Hassle-free return policy for customer satisfaction."
     }
   ];
 

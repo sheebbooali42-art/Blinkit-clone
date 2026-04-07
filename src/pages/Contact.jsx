@@ -12,9 +12,9 @@
         {/* Contact Info */}
         <div>
           <h2 className="text-xl font-semibold mb-2">Our Information</h2>
-          <p>Email: support@shopease.com</p>
-          <p>Phone: +91 98765 43210</p>
-          <p>Address: Jaipur, Rajasthan, India</p>
+          <p>Email: sheeebbooali42@gmail.com</p>
+          <p>Phone: +91 8081010679</p>
+          <p>Address: siswa, uttarPradesh, India</p>
         </div>
 
         {/* Contact Form */}
