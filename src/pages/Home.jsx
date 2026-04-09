@@ -21,6 +21,7 @@ export const Home = () => {
         "https://dummyjson.com/products/categories"
       );
       setCategories(res.data);
+      
     } catch (error) {
       console.log(error);
       setCategories([]);
@@ -41,7 +42,7 @@ export const Home = () => {
       const res = await axios.get(API);
       setProducts(res.data.products);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       setProducts([]);
     } finally {
       setLoading(false);
@@ -66,9 +67,10 @@ export const Home = () => {
       <HeroSection />
 
       {/* Categories */}
-      <div>
+            <div>
         <ul className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 p-4">
-          {categories.map((cat, index) => (
+          {
+          categories.map((cat, index) => (
             <Link key={index} to={`/category/${cat.slug}`}>
               <li className="p-2 text-center cursor-pointer hover:bg-amber-200 shadow text-sm">
                 {cat.name}</li>
@@ -79,14 +81,13 @@ export const Home = () => {
 
       {/* Products */}
       <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {loading
-          ? Array.from({ length: 6 }).map((_, index) => (
-              <SkeletonCard key={index} />
-            ))
-          : products.map((item) => (
+        {loading ? Array.from({ length: 6 }).map((_, index) => (
+              <SkeletonCard key={index} />)) : products.map((item) => (
               <ProductCard key={item.id} product={item} />
             ))}
       </div>
     </div>
   );
-};
+}; 
+
+ 

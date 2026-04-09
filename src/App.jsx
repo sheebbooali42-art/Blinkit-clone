@@ -6,7 +6,8 @@ import Layout from "./pages/Layout";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
-
+import Forzerofor from "./pages/Forzerofor";
+import Cart from "./pages/Cart";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -30,6 +31,15 @@ export default function App() {
           element: <Services />, 
         },
         {
+          path: "cart",
+          element: <Cart/>,
+        },
+        {
+          path: "*",
+          element: <Forzerofor/>,
+        },
+
+        {
           path: "category/:slug",
           element: <Home />,
         },
@@ -37,6 +47,8 @@ export default function App() {
           path: "product/:id",
           element: <DynamicPage />,
         },
+
+
       ],
     },
   ]);
