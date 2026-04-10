@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Store } from "../Context/Context";
 
 const ProductCard = ({ product }) => {
-  const { AddToCart } = useContext(Store);
+  const { AddToCart } = useContext(Store)
   const navigate = useNavigate();
 
   return (
@@ -34,9 +34,7 @@ const ProductCard = ({ product }) => {
         </button>
 
         {/* Add to Cart */}
-        <button
-          onClick={() =>
-            AddToCart({
+        <button onClick={() => AddToCart({
               id: product.id,
               title: product.title,
               thumbnail: product.thumbnail,

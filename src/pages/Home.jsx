@@ -53,7 +53,8 @@ export const Home = () => {
   // ✅ Fetch products on slug change
   useEffect(() => {
     fetchProducts();
-  }, [slug]);
+  },
+   [slug]);
 
 
   // ✅ Fetch categories once
@@ -72,7 +73,7 @@ export const Home = () => {
           {
           categories.map((cat, index) => (
             <Link key={index} to={`/category/${cat.slug}`}>
-              <li className="p-2 text-center cursor-pointer hover:bg-amber-200 shadow text-sm">
+                 <li className="p-2 text-center cursor-pointer hover:bg-amber-200 shadow text-sm">
                 {cat.name}</li>
             </Link>
           ))}
@@ -82,7 +83,7 @@ export const Home = () => {
       {/* Products */}
       <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         {loading ? Array.from({ length: 6 }).map((_, index) => (
-              <SkeletonCard key={index} />)) : products.map((item) => (
+           <SkeletonCard key={index} />)) : products.map((item) => (
               <ProductCard key={item.id} product={item} />
             ))}
       </div>

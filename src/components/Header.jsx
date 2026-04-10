@@ -27,11 +27,7 @@ const Header = () => {
         {/* Nav Links */}
         <nav className="flex items-center gap-6">
           {items.map((item, index) => (
-            <Link
-              key={index}
-              to={item.path}
-              className={`uppercase transition ${
-                pathname === item.path
+            <Link key={index} to={item.path} className={`uppercase transition ${pathname === item.path
                   ? "bg-amber-600 px-4 py-1.5 rounded-lg"
                   : "hover:text-amber-400"
               }`}
